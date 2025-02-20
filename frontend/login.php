@@ -20,7 +20,7 @@ include_once '../backend/php/ctlogx.php';
     <div class="login-wrapper">
         <!-- Columna izquierda con imagen -->
         <div class="box-image box-col">
-            <img src="../backend/img/bikram_yoga.jpg" alt="Bikram Yoga CDMX">
+            <img src="../backend/img/img2.jpg" alt="Bikram Yoga CDMX">
         </div>
 
         <!-- Columna derecha con formulario -->
@@ -28,15 +28,11 @@ include_once '../backend/php/ctlogx.php';
             <div class="box-form">
                 <div class="inner">
                     <div class="form-head">
+                        <img src="../backend/img/bikram_yoga.jpg" alt="Logo" class="logo-pequeno">
                         <div class="title">
                             Bienvenido de nuevo
                         </div>
                         <br>
-                        <?php 
-                            if (isset($errMsg)) {
-                                echo '<div style="color:#FF0000;text-align:center;font-size:20px;font-weight:bold;">'.$errMsg.'</div>';
-                            }
-                        ?>
                         <form class="login-form" autocomplete="off" method="post" role="form">
                             <!-- Campo Usuario -->
                             <div class="form-group">
@@ -56,19 +52,22 @@ include_once '../backend/php/ctlogx.php';
                                     type="password" 
                                     required 
                                     class="form-control" 
-                                    placeholder="Ingrese su contraseña"
-                                    value="<?php if(isset($_POST['clave'])) echo MD5($_POST['clave']); ?>">
+                                    placeholder="Ingrese su contraseña">
                             </div>
-                            
+                         <?php 
+                            if (isset($errMsg)) {
+                                echo '<div style="color:#9562f3;text-align:center;font-size:13px;">'.$errMsg.'</div>';
+                            }
+                        ?>
                             <!-- Botón de acceso -->
                             <div class="actions">
                                 <button name='ctglog' type="submit" class="btn btn-submit">
                                     Acceder
-                                </button>
+                                    <div class="hoverEffect">
+                                    <div></div>
+                                    </div>
+                                </button>   
                                 <!-- Enlace opcional de registro -->
-                                <div style="margin-top:1.5rem;text-align:center;color:#6a8564;">
-                                    ¿Primera vez? <a href="#" class="link">Regístrate aquí</a>
-                                </div>
                             </div>
                         </form>
                     </div>

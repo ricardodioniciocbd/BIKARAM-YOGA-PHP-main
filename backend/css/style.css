@@ -1,263 +1,195 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  background: #f8f5f2;
-  font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
+/* Contenedor principal del login */
 .login-wrapper {
-  display: flex;
-  max-width: 1200px;
-  margin: 2rem auto;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(106, 133, 100, 0.1);
-  overflow: hidden;
-  min-height: 80vh;
+    display: flex;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
 }
 
-/* ====================================
-   COLUMNA DE LA IMAGEN
-==================================== */
-.login-wrapper .box-col {
-  width: 50%;
-  position: relative;
-  /* Fondo degradado, si lo deseas */
-  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
-  display: flex; /* Para centrar la imagen con flex si quieres */
-  justify-content: center;
-  align-items: center;
+/* Columnas: imagen y formulario */
+.box-col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-/* Ajuste de la imagen: 
-   - max-width para que no exceda el contenedor
-   - height: auto para mantener proporción
-   - object-fit: contain para que se vea completa
-*/
-.login-wrapper .box-col img {
-  max-width: 80%; /* Ajusta según tu preferencia */
-  height: auto;
-  object-fit: contain;
-  filter: sepia(10%) brightness(105%);
-  display: block;
+/* Columna de imagen */
+.box-image {
+    background-color: #f7f7f7;
 }
 
-/* Texto superpuesto (si lo usas con ::after) */
-.box-image::after {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgb(255, 255, 255);
-  font-size: 1.8rem;
-  text-align: center;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-  font-weight: bold;
-  width: 100%;
-  padding: 0 20px;
-  font-family: 'Montserrat', sans-serif;
+.box-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
-/* ====================================
-   COLUMNA DEL FORMULARIO
-==================================== */
+/* Contenedor del formulario */
 .box-form {
-  padding: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #ffffff;
-  width: 100%;
-  height: 100%;
-  min-height: 80vh; /* Igualar altura del contenedor padre */
+    width: 100%;
 }
 
 .inner {
-  max-width: 350px;
-  width: 100%;
-  margin: auto; /* Centrado vertical y horizontal */
+    width: 100%;
+    padding: 0 40px;
 }
 
+/* Encabezado del formulario */
 .form-head .title {
-  font-size: 2.5rem;
-  color: #4a6552;
-  font-weight: 300;
-  margin-bottom: 2.5rem;
-  position: relative;
-  letter-spacing: 1px;
-  font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.form-head .title::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background: #9ab89d;
+/* Formulario de login */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group {
-  margin-bottom: 2rem;
-  position: relative;
+    margin-bottom: 15px;
 }
 
 .label-text {
-  color: #6c757d;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.8rem;
-  display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
 }
 
+/* Estilo de los inputs */
 .form-control {
-  width: 100%;
-  padding: 1rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background: #f8f8f8;
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-family: inherit;
+    box-shadow: 0 0 0 1px #8a8c9b;
+    border: none;
+    border-radius: 25px;
+    background-color: #f7f5ff;
+    transition: all .3s;
+}
+.form-control::placeholder{
+    color: #a697ce;
+    font-size: 14px;
+
 }
 
-.form-control:focus {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(154, 184, 157, 0.2);
-  background: #fff;
+.form-control :focus{
+    outline: none;
+    box-shadow: 0 0 10px 1px #968cee75;
+    border: none;
+    transition: all .3s;
+
+}
+/* Área de acciones */
+.actions {
+    margin-top: 20px;
+    text-align: center;
 }
 
-.actions .btn-submit {
-  background: #6e8a64;
-  color: #fff;
-  padding: 1rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+/* Botón de acceso */
+.btn-submit {
+    display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10rem;
+  transition: all 0.02s;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  width: 100%;
+  color: rgb(37, 37, 37);
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
 }
 
-.actions .btn-submit:hover {
-  background: #5a7564;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(106, 133, 100, 0.2);
+.btn-submit:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
 }
 
-/* ÍCONOS CON FONT AWESOME */
-.form-group::after {
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #ffffff;
-  font-size: 1.1rem;
+.btn-submit:active{
+    transform: scale(0.97);
 }
 
-.form-group:nth-child(1)::after {
-  content: '\f007';
-  font-weight: 400;
-}
 
-.form-group:nth-child(2)::after {
-  content: '\f023';
-  font-weight: 900;
-}
-
-/* MENSAJE DE ERROR */
-.error-message {
-  padding: 1rem;
-  background: #ffe6e6;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  border: 1px solid #ffcccc;
-  color: #FF0000;
-  text-align: center;
-}
-
-/* ENLACES */
-.link {
-  color: #6a8564;
-  transition: color 0.3s ease;
-}
-
-.link:hover {
-  color: #5a7564;
-  text-decoration: underline;
-}
-
-/* ====================================
-   MEDIA QUERIES
-==================================== */
-
-/* En pantallas hasta 768px, la columna de la imagen
-   se vuelve un bloque vertical */
-@media (max-width: 768px) {
-  .login-wrapper {
-    flex-direction: column;
-    margin: 1rem;
-    min-height: auto;
-  }
-
-  .login-wrapper .box-col {
-    width: 50%;
-    position: relative;
-    /* Dejamos el degradado si lo deseas */
-    background: linear-gradient(rgba(106, 133, 100, 0.1), rgba(106, 133, 100, 0.1));
+.hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    z-index: 1;
   }
   
-  /* El recuadro blanco que envuelve la imagen */
-  .login-wrapper .box-col .image-wrapper {
-    background: #fff;     /* Fondo blanco */
-    padding: 2rem;        /* Espacio interno */
-    border-radius: 8px;   /* Esquinas redondeadas (opcional) */
+  .hoverEffect div {
+    background: rgb(178, 21, 193);
+    background: linear-gradient(
+      90deg,
+      rgba(222, 0, 75, 1) 0%,
+      rgba(191, 70, 255, 1) 49%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
   }
   
-  .login-wrapper .box-col img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    filter: sepia(10%) brightness(105%);
+  .button:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+  }
+  
+  @keyframes effect {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .logo-pequeno {
     display: block;
+    margin: -60px auto 20px; /* Mueve la imagen más arriba y da espacio abajo */
+    width: 8rem; /* Tamaño más grande */
+    height: auto;
   }
   
-
-  .box-form {
-    padding: 2.5rem;
-    min-height: auto;
-  }
-
-  .form-head .title {
-    font-size: 2rem;
-  }
-}
-
-/* En pantallas hasta 480px */
-@media (max-width: 480px) {
-  .login-wrapper .box-col img {
-    max-width: 200px;
-  }
-
-  .box-form {
-    padding: 1.5rem;
-  }
-
-  .form-head .title {
-    font-size: 1.8rem;
-  }
-}
+  
